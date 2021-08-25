@@ -9,7 +9,7 @@ Snake::Snake()
     direction = UP;
 }
 
-void Snake::move()
+void Snake::move()      // snake move a step
 {
     Position head = position.front();
     switch (direction)

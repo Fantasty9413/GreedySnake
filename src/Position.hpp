@@ -1,3 +1,6 @@
+# ifndef _POSOTION_H_
+# define _POSOTION_H_
+
 # include <iostream>
 
 struct Position
@@ -5,3 +8,5 @@ struct Position
     int x;
     int y;
 };
+
+# endif

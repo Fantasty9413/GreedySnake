@@ -1,4 +1,6 @@
-# include <iostream>
+# ifndef _SNAKE_H_
+# define _SNAKE_H_
+
 # include <deque>
 # include "Position.hpp"
 # include "Direction.hpp"
@@ -16,3 +18,5 @@ class Snake
     void extend();
     void eat_food();
 };
+
+# endif
