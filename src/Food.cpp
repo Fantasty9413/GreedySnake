@@ -1,4 +1,5 @@
 # include "Food.hpp"
+# include <stdlib.h>
 
 int Food::num = 0;
 
