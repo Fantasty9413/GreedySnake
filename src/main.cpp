@@ -42,20 +42,18 @@ int main()
 
     Visualization vis;
     vis.SetWindow();
-    vis.SetCursor(10, 10);
-    Position p = {10, 10};
-    vis.Display_Circular(p);
 
-    p.x ++;
-    p.y ++;
-    vis.Display_Square(p);
+    Snake* p_snake = NULL;
+    p_snake = new Snake();
+    vis.Display_Snake(*p_snake);
 
-    p.x ++;
-    p.y ++;
-    vis.Display_Start(p); 
+    Food* p_food = NULL;
+    p_food = new Food();
+    vis.Display_Food(*p_food);
 
-    Wall wall;
-    vis.Display_Wall(wall);
+    Wall* p_wall = NULL;
+    p_wall = new Wall();
+    vis.Display_Wall(*p_wall);
 
 
     system("pause");

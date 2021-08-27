@@ -5,14 +5,15 @@
 # include "Position.hpp"
 # include "Visualization.hpp"
 
+class Visualization;
 class Wall
 {
 private:
-    std::deque<Position> wall;
+    std::deque<Position> position;
 
 public:
     Wall();
-    friend void Visualization::Display_Wall(Wall wall);
+    friend class Visualization;
 };
 
 # endif

@@ -8,7 +8,7 @@ void Visualization::SetWindow(int x, int y)
     int cols = x;
     int lines = y;
     system("title 贪吃蛇");//设置窗口标题
-    char cmd[30];
+    char cmd[40];
     sprintf(cmd, "mode con cols=%d lines=%d", cols * 2, lines);//一个图形■占两个字符，故宽度乘以2
     system(cmd);//system(mode con cols=88 lines=88)设置窗口宽度和高度    
 }
@@ -39,10 +39,26 @@ void Visualization::Display_Start(Position position)
     std::cout << "★";
 }
 
+void Visualization::Display_Snake(Snake snake)
+{
+    auto it = snake.position.begin();
+    while(it != snake.position.end())
+    {
+        Display_Circular(*it);
+        it++;
+    }
+}
+
+void Visualization::Display_Food(Food food)
+{
+    auto it = &food.position;
+    Display_Start(*it);
+}
+
 void Visualization::Display_Wall(Wall wall)
 {
-    auto it = wall.wall.begin();
-    while(it != wall.wall.end())
+    auto it = wall.position.begin();
+    while(it != wall.position.end())
     {
         Display_Square(*it);
         it++;
