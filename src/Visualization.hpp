@@ -23,6 +23,7 @@ public:
     void Display_Snake(Snake snake);
     void Display_Food(Food food);
     void Display_Wall(Wall wall);
+    void Display_GameModel(Snake snake, Food food, Wall wall);
 };
 
 # endif

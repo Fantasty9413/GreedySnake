@@ -45,15 +45,17 @@ int main()
 
     Snake* p_snake = NULL;
     p_snake = new Snake();
-    vis.Display_Snake(*p_snake);
+    // vis.Display_Snake(*p_snake);
 
     Food* p_food = NULL;
     p_food = new Food();
-    vis.Display_Food(*p_food);
+    // vis.Display_Food(*p_food);
 
     Wall* p_wall = NULL;
     p_wall = new Wall();
-    vis.Display_Wall(*p_wall);
+    // vis.Display_Wall(*p_wall);
+
+    vis.Display_GameModel(*p_snake, *p_food, *p_wall);
 
 
     system("pause");

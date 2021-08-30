@@ -64,3 +64,10 @@ void Visualization::Display_Wall(Wall wall)
         it++;
     }
 }
+
+void Visualization::Display_GameModel(Snake snake, Food food, Wall wall)
+{
+    Display_Snake(snake);
+    Display_Food(food);
+    Display_Wall(wall);
+}
