@@ -67,6 +67,7 @@ void Visualization::Display_Wall(Wall wall)
 
 void Visualization::Display_GameModel(Snake snake, Food food, Wall wall)
 {
+    system("cls");              // clear the screen
     Display_Snake(snake);
     Display_Food(food);
     Display_Wall(wall);

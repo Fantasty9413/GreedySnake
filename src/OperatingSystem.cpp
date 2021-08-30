@@ -1,7 +1,7 @@
 # include "OperatingSystem.hpp"
 # include <conio.h>
 
-Key OS_move()
+Key OS_Key()
 {
     char ch;
     if(kbhit())
@@ -14,19 +14,19 @@ Key OS_move()
             switch (ch)
             {
             case 72:
-                return Key::UP;
+                return Key::key_UP;
                 break;
 
             case 80:
-                return Key::DOWN;
+                return Key::key_DOWN;
                 break;
 
             case 75:
-                return Key::LEFT;
+                return Key::key_LEFT;
                 break;
 
             case 77:
-                return Key::RIGHT;
+                return Key::key_RIGHT;
                 break;        
             
             default:
@@ -35,8 +35,14 @@ Key OS_move()
             break;
         
         default:
-            return Key::NULL;
+            return Key::key_None;
             break;
         }
     }
+    else
+    {
+        return Key::key_None; 
+    }
+
+    return Key::key_None;  
 }

@@ -17,6 +17,7 @@ class Snake
     void move();
     void extend();
     void eat_food();
+    void os();
 };
 
 # endif

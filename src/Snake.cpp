@@ -1,4 +1,5 @@
 # include "Snake.hpp"
+# include "OperatingSystem.hpp"
 
 Snake::Snake()
 {
@@ -6,7 +7,7 @@ Snake::Snake()
     body.x = 15;
     body.y = 15;
     position.push_front(body);
-    direction = UP;
+    direction = Direction::UP;
 }
 
 void Snake::move()      // snake move a step
@@ -50,4 +51,37 @@ void Snake::extend()
 void Snake::eat_food()
 {
     
+}
+
+void Snake::os()
+{
+    Key key = OS_Key();
+    switch (key)
+    {
+    case Key::key_UP:
+        if (direction != Direction::DOWN)
+            direction = Direction::UP;
+        break;
+
+    case Key::key_DOWN:
+        if (direction != Direction::UP)
+            direction = Direction::DOWN;
+        break;
+
+    case Key::key_LEFT:
+        if (direction != Direction::RIGHT)
+            direction = Direction::LEFT;
+        break;
+
+    case Key::key_RIGHT:
+        if (direction != Direction::LEFT)
+            direction = Direction::RIGHT;
+        break;
+
+    case Key::key_None:
+        break;
+
+    default:
+        break;
+    }
 }

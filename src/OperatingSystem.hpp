@@ -3,8 +3,8 @@
 
 # include "Direction.hpp"
 
-enum Key {UP, DOWN, LEFT, RIGHT, NULL};
+enum Key {key_UP, key_DOWN, key_LEFT, key_RIGHT, key_None};
 
-Key OS_move();
+Key OS_Key();
 
 # endif

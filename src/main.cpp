@@ -1,4 +1,5 @@
 # include <iostream>
+# include <windows.h>
 # include "Snake.hpp"
 # include "Food.hpp"
 # include "Visualization.hpp"
@@ -55,8 +56,13 @@ int main()
     p_wall = new Wall();
     // vis.Display_Wall(*p_wall);
 
-    vis.Display_GameModel(*p_snake, *p_food, *p_wall);
-
+    while(1)
+    {
+        p_snake->os();
+        p_snake->move();
+        vis.Display_GameModel(*p_snake, *p_food, *p_wall);
+        Sleep(400);    
+    }
 
     system("pause");
     return 0;
