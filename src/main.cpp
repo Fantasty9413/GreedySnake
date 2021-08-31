@@ -1,8 +1,8 @@
 # include <iostream>
-# include <windows.h>
 # include "Snake.hpp"
 # include "Food.hpp"
 # include "Visualization.hpp"
+# include "GameSystem.hpp"
 
 int main()
 {
@@ -44,6 +44,8 @@ int main()
     Visualization vis;
     vis.SetWindow();
 
+    GameSystem gs;
+
     Snake* p_snake = NULL;
     p_snake = new Snake();
     // vis.Display_Snake(*p_snake);
@@ -60,8 +62,8 @@ int main()
     {
         p_snake->os();
         p_snake->move();
-        vis.Display_GameModel(*p_snake, *p_food, *p_wall);
-        Sleep(400);    
+        gs.GameEngine(p_snake, p_food, p_wall);
+        vis.Display_GameModel(*p_snake, *p_food, *p_wall);   
     }
 
     system("pause");

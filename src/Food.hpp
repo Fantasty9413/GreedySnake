@@ -5,7 +5,7 @@
 
 class Food
 {
-    public:
+    protected:
     static int num;         // quantity of food
     Position position;
     int score;
@@ -14,6 +14,8 @@ class Food
     Food();
     ~Food();
     void SetFood();
+    friend class Visualization;
+    friend class GameSystem;
 };
 
 # endif

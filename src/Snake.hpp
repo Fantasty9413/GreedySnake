@@ -7,7 +7,7 @@
 
 class Snake
 {
-    public:
+    private:
     std::deque<Position> position;
     Position tail_last;
     Direction direction;
@@ -18,6 +18,8 @@ class Snake
     void extend();
     void eat_food();
     void os();
+    friend class Visualization;
+    friend class GameSystem;
 };
 
 # endif

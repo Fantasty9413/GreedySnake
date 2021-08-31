@@ -5,7 +5,7 @@
 # include "Position.hpp"
 # include "Visualization.hpp"
 
-class Visualization;
+// class Visualization;
 class Wall
 {
 private:
@@ -14,6 +14,7 @@ private:
 public:
     Wall();
     friend class Visualization;
+    friend class GameSystem;
 };
 
 # endif

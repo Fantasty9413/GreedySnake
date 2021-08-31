@@ -7,4 +7,6 @@ struct Position
     int y;
 };
 
+bool operator==(const Position& pos1, const Position& pos2);
+
 # endif
