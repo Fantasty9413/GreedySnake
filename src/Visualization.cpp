@@ -73,3 +73,15 @@ void Visualization::Display_GameModel(Snake snake, Food food, Wall wall)
     Display_Wall(wall);
     Sleep(400);   
 }
+
+void Visualization::Display_UI(UI* ui)
+{
+    ui->Initial();
+    auto it = ui->contents.begin();
+    while(it != ui->contents.end())
+    {
+        SetCursor((*it).position.x, (*it).position.y);
+        std::cout << (*it).text;
+        it++;
+    }
+}

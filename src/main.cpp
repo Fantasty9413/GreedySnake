@@ -3,6 +3,8 @@
 # include "Food.hpp"
 # include "Visualization.hpp"
 # include "GameSystem.hpp"
+# include "System.hpp"
+# include "UI.hpp"
 
 int main()
 {
@@ -58,12 +60,40 @@ int main()
     p_wall = new Wall();
     // vis.Display_Wall(*p_wall);
 
+    UI* ui = NULL;
+
     while(1)
     {
-        p_snake->os();
-        p_snake->move();
-        gs.GameEngine(p_snake, p_food, p_wall);
-        vis.Display_GameModel(*p_snake, *p_food, *p_wall);   
+        switch (sp_pointer)
+        {
+        case SystemProcess::SP_start:
+            /* code */
+            break;
+
+        case SystemProcess::SP_game:
+            p_snake->os();
+            p_snake->move();
+            gs.GameEngine(p_snake, p_food, p_wall);
+            vis.Display_GameModel(*p_snake, *p_food, *p_wall);  
+            break;
+
+        case SystemProcess::SP_end:           
+            system("cls");
+            // vis.SetCursor(15, 15);
+            // std::cout << "Game over !!!" << '\n';
+            ui = new UI_End;
+            vis.Display_UI(ui);
+            while (1)
+            {
+                /* code */
+            }
+            
+            break;
+
+        default:
+            break;
+        }
+
     }
 
     system("pause");

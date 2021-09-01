@@ -7,6 +7,7 @@
 # include "Snake.hpp"
 # include "Food.hpp"
 # include "Wall.hpp"
+# include "UI.hpp"
 
 class Wall;
 
@@ -24,6 +25,7 @@ public:
     void Display_Food(Food food);
     void Display_Wall(Wall wall);
     void Display_GameModel(Snake snake, Food food, Wall wall);
+    void Display_UI(UI* ui);
 };
 
 # endif
