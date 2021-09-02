@@ -1,10 +1,12 @@
 # include <iostream>
+# include <windows.h>
 # include "Snake.hpp"
 # include "Food.hpp"
 # include "Visualization.hpp"
 # include "GameSystem.hpp"
 # include "System.hpp"
 # include "UI.hpp"
+# include "OperatingSystem.hpp"
 
 int main()
 {
@@ -62,40 +64,65 @@ int main()
 
     UI* ui = NULL;
 
-    while(1)
+    while(sp_pointer != SystemProcess::SP_exit)
     {
         switch (sp_pointer)
         {
         case SystemProcess::SP_start:
-            /* code */
+            ui = new UI_Start;
+            vis.Display_UI(ui);
+            Sleep(1000);
+            // gs.ModelInitial(p_snake, p_food, p_wall);
+            delete p_snake;
+            delete p_food;
+            delete p_wall;
+            p_snake = new Snake();
+            p_food = new Food();
+            p_wall = new Wall();
+            sp_pointer = SystemProcess::SP_game;
             break;
 
         case SystemProcess::SP_game:
             p_snake->os();
-            p_snake->move();
             gs.GameEngine(p_snake, p_food, p_wall);
             vis.Display_GameModel(*p_snake, *p_food, *p_wall);  
             break;
 
         case SystemProcess::SP_end:           
-            system("cls");
             // vis.SetCursor(15, 15);
             // std::cout << "Game over !!!" << '\n';
             ui = new UI_End;
             vis.Display_UI(ui);
-            while (1)
+            while (sp_pointer == SP_end)
             {
-                /* code */
-            }
-            
+                switch (OS_Key())
+                {
+                case Key::key_None:
+                    /* code */
+                    break;
+
+                case Key::key_LEFT:
+                    sp_pointer = SystemProcess::SP_start;        // press left arrow to restart
+                    break;
+
+                case Key::key_RIGHT:
+                    sp_pointer = SystemProcess::SP_exit;         // press right arrow to exit
+                    break;
+                                                        
+                default:
+                    break;
+                }
+            }            
+            break;
+
+        case SystemProcess::SP_exit:
+            sp_pointer = SystemProcess::SP_exit;            
             break;
 
         default:
             break;
         }
-
     }
 
-    system("pause");
     return 0;
 }

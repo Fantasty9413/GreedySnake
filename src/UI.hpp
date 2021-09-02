@@ -22,4 +22,11 @@ class UI_End: public UI
     friend class Visualization;
 };
 
+class UI_Start: public UI
+{
+    public:
+    void Initial();
+    friend class Visualization;
+};
+
 # endif

@@ -13,3 +13,15 @@ void UI_End::Initial()
         contents.push_back(c[index]);
     }
 }
+
+void UI_Start::Initial()
+{
+    name = "Start";
+    Content *c = new Content[1];
+    c[0] = {"Greedy Snake", {12, 9}};
+
+    for(int index=0; index<1; index++)
+    {
+        contents.push_back(c[index]);
+    }    
+}

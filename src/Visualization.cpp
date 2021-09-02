@@ -76,6 +76,7 @@ void Visualization::Display_GameModel(Snake snake, Food food, Wall wall)
 
 void Visualization::Display_UI(UI* ui)
 {
+    system("cls");
     ui->Initial();
     auto it = ui->contents.begin();
     while(it != ui->contents.end())

@@ -4,6 +4,16 @@
 # include <deque>
 # include <algorithm>
 
+void GameSystem::ModelInitial(Snake* snake, Food* food, Wall* wall)
+{
+    delete snake;
+    delete food;
+    delete wall;
+    snake = new Snake();
+    food = new Food();
+    wall = new Wall();
+}
+
 bool GameSystem::SnakeGetFood(Snake* snake, Food* food)
 {
     return snake->position.front() == food->position;
@@ -31,6 +41,8 @@ bool GameSystem::SnakeHitSelf(Snake* snake)
 
 void GameSystem::GameEngine(Snake* snake, Food* food, Wall* wall)
 {
+    snake->move();
+
     if (SnakeGetFood(snake, food))
     {
         snake->extend();

@@ -10,6 +10,7 @@ class GameSystem
 private:
     /* data */
 public:
+    void ModelInitial(Snake* snake, Food* food, Wall* wall);
     bool SnakeGetFood(Snake* snake, Food* food);
     bool SnakeHitWall(Snake* snake, Wall* wall);
     bool SnakeHitSelf(Snake* snake);
