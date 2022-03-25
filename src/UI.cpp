@@ -17,10 +17,11 @@ void UI_End::Initial()
 void UI_Start::Initial()
 {
     name = "Start";
-    Content *c = new Content[1];
+    Content *c = new Content[2];
     c[0] = {"Greedy Snake", {12, 9}};
+    c[1] = {"Press down arrow to start game.", {8, 18}};
 
-    for(int index=0; index<1; index++)
+    for(int index=0; index<2; index++)
     {
         contents.push_back(c[index]);
     }    

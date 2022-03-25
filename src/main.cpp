@@ -79,6 +79,23 @@ int main()
             p_snake = new Snake();
             p_food = new Food();
             p_wall = new Wall();
+            // while (sp_pointer == SP_start)
+            // {
+            //     switch (OS_Key())
+            //     {
+            //     case Key::key_None:
+            //         /* code */
+            //         break;
+
+            //     case Key::key_DOWN:
+            //         sp_pointer = SystemProcess::SP_game;        // press down arrow to start game
+            //         break;
+                                                        
+            //     default:
+            //         break;
+            //     }
+            // }
+            
             sp_pointer = SystemProcess::SP_game;
             break;
 
